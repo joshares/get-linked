@@ -3,11 +3,13 @@ import Navbar from "component/components/Navbar";
 import Line from "component/ui/Line";
 import React from "react";
 
-export default function Layout({ children }) {
+export default function Layout({ children, style }) {
   return (
     <main className="w-full text-white">
       <Navbar />
-      <Aside />
+      <div className={`${style}`}>
+        <Aside />
+      </div>
       <Line />
       <div>{children}</div>
     </main>

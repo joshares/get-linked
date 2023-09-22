@@ -9,20 +9,20 @@ import star_d from "../../public/dull-star.svg";
 import bulb from "../../public/bulb.svg";
 import bubbles from "../../public/star-bubble.svg";
 import Button from "component/ui/Button";
+import Line from "component/ui/Line";
 
 export default function Hero() {
   return (
     <main>
       <div className="md:pl-16 md:pt-8 pt-5">
         <div className=" md:pr-10 flex md:justify-end justify-center w-full">
-          <p className="md:text-3xl sm:text-2xl text-xl font-bold italic relative     w-max">
+          <p className="md:text-3xl sm:text-2xl  text-lg font-bold italic relative     w-max">
             <span>Igniting a Revolution in HR innovation</span>
             <Image
               src={slash}
               alt="slash"
               width={253}
               className="absolute -bottom-3 md:w-[14rem]  sm:w-[11rem] w-[9rem] right-[0%]"
-              // className="absolute -bottom-3 sm:right-[5rem] sm:w-[11rem] w-[9rem] right-[]"
             />
           </p>
         </div>
@@ -119,7 +119,7 @@ export default function Hero() {
           </article>
         </section>
       </div>
-      <div className="bg-[#D9D9D9] h-[1px] opacity-20 w-full"></div>
+      <Line />
     </main>
   );
 }

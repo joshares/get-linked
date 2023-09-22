@@ -13,7 +13,7 @@ import Button from "component/ui/Button";
 export default function Intro() {
   return (
     <main>
-      {/* introduction to get linked */}
+      {/* introduction to get linked section*/}
       <section className="flex flex-col md:flex-row justify-center items-center p-14 gap-16">
         <article className="md:w-1/2 relative md:pl-14">
           <div className="absolute top-[7rem] -left-6 md:left-3 md:top-[9rem]">
@@ -44,7 +44,7 @@ export default function Intro() {
         </article>
       </section>
       <Line />
-      {/* Rules and Guidelines */}
+      {/* Rules and Guidelines section*/}
       <section className="flex flex-col-reverse md:flex-row justify-center items-center p-14 md:py-4 gap-8">
         <article className="flex flex-col gap-2 justify-center md:w-1/2 md:p-4 font-bold md:text-3xl text-xl text-center md:text-left relative  ">
           {/* start positioning of stars */}
@@ -78,7 +78,7 @@ export default function Intro() {
         </article>
       </section>
       <Line />
-      {/* judging criteria & key attributes */}
+      {/* judging criteria & key attributes section*/}
       <section className="flex flex-col md:flex-row justify-center items-center p-14 md:py-4 md:pb-16 gap-8">
         <article className="md:w-1/2  relative">
           {/* start positioning of stars */}
