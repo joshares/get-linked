@@ -68,7 +68,7 @@ export default function Partners() {
         </article>
         <article className="flex justify-center gap-6 md:gap-12 items-center py-4 pb-5 h-1">
           <LineSeperator style="h-[2px] md:h-[3px] w-2/6" />
-          <LineSeperator style="h-[2px] md:h-[3px] w-3/6" />
+          <LineSeperator style="h-[2px] md:h-[3px] w-[45%] m-6" />
           <LineSeperator style="h-[2px] md:h-[3px] w-2/6 " />
         </article>
         <article className="flex items-center justify-between ">
