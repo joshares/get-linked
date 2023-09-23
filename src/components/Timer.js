@@ -62,15 +62,15 @@ function Timer() {
           suppressHydrationWarning={true}
         >
           <p className="text-5xl md:9xl font-medium">
-            {timeRemaining.hours}
+            {timeRemaining.total < 1 ? "00" : timeRemaining.hours}
             <span className="text-base">H</span>
           </p>
           <p className="text-5xl md:9xl font-medium">
-            {timeRemaining.minutes}
+            {timeRemaining.total < 1 ? "00" : timeRemaining.minutes}
             <span className="text-base">M</span>
           </p>
           <p className="text-5xl md:9xl font-medium">
-            {timeRemaining.seconds}
+            {timeRemaining.total < 1 ? "00" : timeRemaining.seconds}
             <span className="text-base">S</span>
           </p>
         </div>
