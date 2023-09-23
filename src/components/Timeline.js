@@ -1,5 +1,9 @@
 import Line from "component/ui/Line";
 import React from "react";
+import redstar from "../../public/svg/red-star.svg";
+import star_b from "../../public/svg/bright-star.svg";
+import star_d from "../../public/svg/dull-star.svg";
+import Image from "next/image";
 
 const LineSocket = ({ style, number, height }) => {
   return (
@@ -14,10 +18,21 @@ const LineSocket = ({ style, number, height }) => {
 
 export default function Timeline() {
   return (
-    <main>
+    <main id="timeline" className="relative overflow-hidden">
+      {/* start positioning of stars */}
+      <div className="absolute top-[10rem] left-[6rem] md:left-[20rem] md:top-[15rem]">
+        <Image src={redstar} alt="star" className="md:w-5 w-3 animate-blink" />
+      </div>
+      <div className="absolute bottom-[45%] right-[5rem] md:right-[20rem] md:bottom-[42%]">
+        <Image src={star_b} alt="star" className="md:w-5 w-3 animate-blink" />
+      </div>
+      <div className="absolute bottom-6 left-5 md:left-[10rem] md:bottom-12">
+        <Image src={star_d} alt="star" className="md:w-5 w-3 animate-blink" />
+      </div>
+      {/* end positioning of stars */}
       <div className="p-14">
         <header className="text-center md:w-[35%] mx-auto pb-20">
-          <h1 className="text-3xl font-bold mb-2">Timeline</h1>
+          <h1 className="text-3xl font-bold mb-2 clash-display">Timeline</h1>
           <p>
             Here is the breakdown of the time we anticipate using for the
             upcoming event

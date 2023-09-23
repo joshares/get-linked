@@ -7,14 +7,14 @@ export default function Navbar() {
   const router = useRouter();
   return (
     <nav className="md:flex hidden justify-between items-center text-white px-16 py-5">
-      <h1 className="font-bold text-4xl w-max">
+      <Link href="/" className="font-bold text-4xl w-max clash-display">
         get<span className="text-[#D434FE]">linked</span>
-      </h1>
+      </Link>
       <section className="flex gap-40 justify-between items-center text-md font-bold text-sm">
         <div className="flex md:gap-8 sm:gap-3 justify-center items-center">
-          <Link href="#">Timeline</Link>
-          <Link href="#">Overview</Link>
-          <Link href="#">FAQs</Link>
+          <Link href="#timeline">Timeline</Link>
+          <Link href="/">Overview</Link>
+          <Link href="#faq">FAQs</Link>
           <Link
             href="/contact"
             className={`${
@@ -25,15 +25,7 @@ export default function Navbar() {
             Contact
           </Link>
         </div>
-        <Link
-          href="/register"
-          // className={` ${
-          //   router.pathname === "/register"
-          //     ? "gradient-border"
-          //     : "gradient-background"
-          // }`}
-        >
-          {/* Register */}
+        <Link href="/register">
           <Button
             title="Register"
             style={`${

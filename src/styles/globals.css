@@ -10,7 +10,11 @@
     background-size: cover;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: #150e28;
   }
+}
+html {
+  scroll-behavior: smooth;
 }
 
 .blend-images {

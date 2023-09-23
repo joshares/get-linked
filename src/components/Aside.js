@@ -1,31 +1,54 @@
 "use client";
 import Image from "next/image";
-import menu from "../../public/menu.svg";
+import menu from "../../public/svg/menu.svg";
 import Link from "next/link";
+import { useState } from "react";
+import Button from "component/ui/Button";
+import { useRouter } from "next/router";
 
 export default function Aside() {
+  const router = useRouter();
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   return (
     <aside className="md:hidden block px-10 p-5">
       <header className="flex justify-between items-center">
-        <h1 className="font-bold text-3xl ">
+        <h1 className="font-bold text-3xl clash-display">
           get<span className="text-[#D434FE]">linked</span>
         </h1>
-        <div className="w-1/9">
+        <div className="w-1/9" onClick={() => setSidebarOpen(!isSidebarOpen)}>
           <Image src={menu} alt="menu" className="" />
         </div>
       </header>
-
-      {/* <section className="flex gap-5 justify-between items-center text-md w-[55%] text-sm">
-        <div className="flex md:gap-8 sm:gap-3 justify-center items-center">
-          <Link href="#">Timeline</Link>
-          <Link href="#">Overview</Link>
-          <Link href="#">FAQs</Link>
-          <Link href="#">Contact</Link>
-        </div>
-        <button className="bg-gradient-to-r  from-[#d434fe] to-[#9034ff] text-white p-2 px-8 rounded-sm ">
-          Register
+      <div
+        className={`fixed top-0 right-0 h-screen w-full bg-[#150E28] transform transition-transform z-40 duration-500 ease-in-out ${
+          isSidebarOpen ? "-translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <button
+          className=" md:hidden m-10  flex self-end gradient-border-arrow rounded-full  justify-center items-center absolute right-8"
+          onClick={() => setSidebarOpen(!isSidebarOpen)}
+        >
+          x
         </button>
-      </section> */}
+        <section className="flex gap-5 flex-col p-10 text-md w-[55%] text-sm pt-28">
+          <div className="flex flex-col text-base  font-bold  gap-4  ">
+            <Link href="#timeline">Timeline</Link>
+            <Link href="/">Overview</Link>
+            <Link href="#faq">FAQs</Link>
+            <Link href="/contact">Contact</Link>
+          </div>
+          <Link href="/register">
+            <Button
+              title="Register"
+              style={`${
+                router.pathname === "/register"
+                  ? "bg-none  gradient-border"
+                  : "w-[8rem] px-0 md:p-[11px]"
+              } `}
+            />
+          </Link>
+        </section>
+      </div>
     </aside>
   );
 }
