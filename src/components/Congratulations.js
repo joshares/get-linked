@@ -44,7 +44,7 @@ export default function Congratulations({ isOpen, closeModal }) {
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="w-max  transform overflow-hidden  p-6 text-left align-middle shadow-xl transition-all">
-                <main className="border border-primary md:w-[50rem] md:p-12 rounded-md text-white p-4 mx-auto">
+                <div className="border border-primary md:w-[50rem] md:p-12 rounded-md text-white p-4 mx-auto">
                   <section>
                     <div className="flex justify-center mx-auto items-center md:w-[24rem] w-[20rem]">
                       <Image
@@ -77,7 +77,7 @@ export default function Congratulations({ isOpen, closeModal }) {
                   <Link href="/" onClick={closeModal}>
                     <Button title="Back" style="w-full font-bold mt-5" />
                   </Link>
-                </main>
+                </div>
                 ;
               </Dialog.Panel>
             </Transition.Child>

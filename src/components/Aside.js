@@ -32,9 +32,15 @@ export default function Aside() {
         </button>
         <section className="flex gap-5 flex-col p-10 text-md w-[55%] text-sm pt-28">
           <div className="flex flex-col text-base  font-bold  gap-4  ">
-            <Link href="#timeline">Timeline</Link>
+            <Link
+              href="#timeline"
+              onClick={() => setSidebarOpen(!isSidebarOpen)}
+            >
+              Timeline
+            </Link>
             <Link
               href="/"
+              onClick={() => setSidebarOpen(!isSidebarOpen)}
               className={`${
                 router.pathname === "/" &&
                 "bg-gradient-to-r  to-[#FF26B9] from-[#9034ff] bg-clip-text text-transparent rounded-sm w-max "
@@ -42,7 +48,9 @@ export default function Aside() {
             >
               Overview
             </Link>
-            <Link href="#faq">FAQs</Link>
+            <Link href="#faq" onClick={() => setSidebarOpen(!isSidebarOpen)}>
+              FAQs
+            </Link>
             <Link href="/contact">Contact</Link>
           </div>
           <Link href="/register">
@@ -51,7 +59,7 @@ export default function Aside() {
               style={`${
                 router.pathname === "/register"
                   ? "bg-none  gradient-border"
-                  : "w-[8rem] px-0 md:p-[11px]"
+                  : "w-[8rem]text-center px-0 md:p-[11px]"
               } `}
             />
           </Link>

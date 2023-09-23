@@ -17,54 +17,8 @@ import Timer from "./Timer";
 
 export default function Hero() {
   const targetDate = new Date("2023-09-30T12:00:00Z");
-  const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
-
-  useEffect(() => {
-    const timerInterval = setInterval(() => {
-      const newTimeRemaining = calculateTimeRemaining();
-      setTimeRemaining(newTimeRemaining);
-
-      if (newTimeRemaining.total <= 0) {
-        clearInterval(timerInterval);
-      }
-    }, 1000);
-
-    // Cleanup the interval when the component unmounts
-    return () => {
-      clearInterval(timerInterval);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  function calculateTimeRemaining() {
-    const currentDate = new Date();
-    const timeDifference = targetDate - currentDate;
-
-    if (timeDifference <= 0) {
-      return {
-        total: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-      };
-    }
-
-    const hours = Math.floor(timeDifference / (1000 * 60 * 60));
-    const minutes = Math.floor(
-      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-    );
-    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-    return {
-      total: timeDifference,
-      hours,
-      minutes,
-      seconds,
-    };
-  }
-
   return (
-    <main className="relative">
+    <main className="relative" suppressHydrationWarning={true}>
       {/* background lights */}
       <div className="absolute md:-top-[18rem] -left-[10%] -top-[8rem] md:left-0 opacity-50 -z-20">
         <Image src={bg_light} alt="metrix" className="" />
@@ -152,7 +106,8 @@ export default function Hero() {
                 style="mx-auto md:mx-0 md:block mt-10 flex justify-center items-center self-center"
               />
             </Link>
-            <div className="flex justify-center items-center gap-4 w-max mx-auto md:mx-0 pt-5 md:py-16 unica">
+            <Timer />
+            {/* <div className="flex justify-center items-center gap-4 w-max mx-auto md:mx-0 pt-5 md:py-16 unica">
               <p className="text-5xl md:9xl font-medium">
                 {timeRemaining.hours}
                 <span className="text-base">H</span>
@@ -165,7 +120,7 @@ export default function Hero() {
                 {timeRemaining.seconds}
                 <span className="text-base">S</span>
               </p>
-            </div>
+            </div> */}
           </article>
           {/* guy with glasses images section */}
           <article className="pt-10 relative ">

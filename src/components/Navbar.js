@@ -16,7 +16,7 @@ export default function Navbar() {
           <Link
             href="/"
             className={`${
-              router.pathname === "/contact" &&
+              router.pathname === "/" &&
               "bg-gradient-to-r  to-[#FF26B9] from-[#9034ff] bg-clip-text text-transparent rounded-sm w-max "
             } `}
           >
