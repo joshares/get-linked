@@ -10,14 +10,35 @@ import people from "../../public/png/people.png";
 import Line from "component/ui/Line";
 import Button from "component/ui/Button";
 import bg_light from "../../public/png/bg-light.png";
+import { motion } from "framer-motion";
+import {
+  slideIn,
+  fadeIn,
+  staggerContainer,
+  textVariant,
+} from "../utils/motion";
 
 export default function Intro() {
   return (
-    <main>
+    <motion.main
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+    >
       {/* introduction to get linked section*/}
-      <section className="flex flex-col md:flex-row justify-center items-center p-14 gap-16">
+      <motion.section
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className="flex flex-col md:flex-row justify-center items-center p-14 gap-16 overflow-hidden"
+      >
         {/* bulb idea article */}
-        <article className="md:w-1/2 relative md:pl-14">
+        <motion.article
+          variants={fadeIn("up", "tween", 0.2, 1)}
+          className="md:w-1/2 relative md:pl-14"
+        >
           {/* start of star positioning */}
           <div className="absolute top-[7rem] -left-6 md:left-3 md:top-[9rem]">
             <Image src={redstar} alt="s" className="md:w-5 w-3 animate-blink" />
@@ -33,9 +54,12 @@ export default function Intro() {
           <div className="absolute -bottom-8 md:-right-[1rem] right-[46%] md:-bottom-[1rem]">
             <Image src={arrow} alt="star" width={50} className="md:w-12 w-8" />
           </div>
-        </article>
+        </motion.article>
         {/* words article */}
-        <article className="flex flex-col gap-2 justify-center md:w-1/2 md:p-4 font-bold md:text-3xl text-xl text-center md:text-left relative mt-5 md:mt-0 md:pr-20 ">
+        <motion.article
+          variants={slideIn("right", "tween", 0.2, 1)}
+          className="flex flex-col gap-2 justify-center md:w-1/2 md:p-4 font-bold md:text-3xl text-xl text-center md:text-left relative mt-5 md:mt-0 md:pr-20 "
+        >
           <div className="absolute top-6 right-0 md:right-8 md:top-10">
             {/* start of star positioning */}
             <Image src={redstar} alt="s" className="md:w-5 w-3 animate-blink" />
@@ -52,11 +76,17 @@ export default function Intro() {
             creating solutions that can change the world, that&apos;s what
             we&apos;re all about!
           </p>
-        </article>
-      </section>
+        </motion.article>
+      </motion.section>
       <Line />
       {/* Rules and Guidelines section*/}
-      <section className="flex flex-col-reverse md:flex-row justify-center items-center p-14 md:py-4 gap-8 relative overflow-hidden">
+      <motion.section
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className="flex flex-col-reverse md:flex-row justify-center items-center p-14 md:py-4 gap-8 relative overflow-hidden"
+      >
         {/* background lights */}
         <div className="absolute md:-top-[18rem] -left-[10%] -top-[8rem] md:left-0 opacity-50 -z-20">
           <Image src={bg_light} alt="metrix" className="" />
@@ -68,7 +98,10 @@ export default function Intro() {
         />
         {/* background lights end */}
         {/* words article */}
-        <article className="flex flex-col gap-2 justify-center md:w-1/2 md:p-4 font-bold md:text-3xl text-xl text-center md:text-left relative  ">
+        <motion.article
+          variants={slideIn("left", "tween", 0.2, 1)}
+          className="flex flex-col gap-2 justify-center md:w-1/2 md:p-4 font-bold md:text-3xl text-xl text-center md:text-left relative  "
+        >
           {/* start positioning of stars */}
           <div className="absolute top-14 -right-4 md:right-[40%] md:-top-4">
             <Image src={star_d} alt="sr" className="md:w-5 w-3 animate-blink" />
@@ -89,9 +122,12 @@ export default function Intro() {
             creating solutions that can change the world, that&apos;s what
             we&apos;re all about!
           </p>
-        </article>
+        </motion.article>
         {/* girl sitting article */}
-        <article className="relative">
+        <motion.article
+          variants={fadeIn("up", "tween", 0.2, 1)}
+          className="relative"
+        >
           {/* star positioning */}
           <div className="absolute bottom-[52%] left-5  md:hidden">
             <Image src={star_b} alt="sr" className="md:w-5 w-3 animate-blink" />
@@ -105,11 +141,17 @@ export default function Intro() {
           />
           {/* circle */}
           <div className="bg-gradient-to-r  from-[#FF26B9] to-[#9034ff]   rounded-full w-[90px] h-[90px] absolute hidden md:block top-[6rem] right-[22%] -z-10 "></div>
-        </article>
-      </section>
+        </motion.article>
+      </motion.section>
       <Line />
       {/* judging criteria & key attributes section*/}
-      <section className="flex flex-col md:flex-row justify-center items-center p-14 md:py-4 md:pb-16 gap-8 relative overflow-hidden">
+      <motion.section
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className="flex flex-col md:flex-row justify-center items-center p-14 md:py-4 md:pb-16 gap-8 relative overflow-hidden"
+      >
         {/* background lights */}
         <div className="absolute md:top-[5rem] -left-[25%] top-[2rem] md:left-0 opacity-50 -z-20">
           <Image src={bg_light} alt="metrix" className="" />
@@ -121,7 +163,10 @@ export default function Intro() {
         />
         {/* background lights end */}
         {/* man and woman picture article */}
-        <article className="md:w-1/2  relative">
+        <motion.article
+          variants={fadeIn("up", "tween", 0.2, 1)}
+          className="md:w-1/2  relative"
+        >
           {/* start positioning of stars */}
           <div className="absolute bottom-[40%] right-[40%] md:right-[40%] md:bottom-[35%] animate-blink">
             <Image src={star_d} alt="star" width={26} className="md:w-5 w-3" />
@@ -135,9 +180,12 @@ export default function Intro() {
             <Image width={710} src={people} alt="people" className="" />
             <div className="bg-gradient-to-r  from-[#FF26B9] to-[#9034ff]   rounded-full w-[90px] h-[90px] absolute hidden md:block -top-3 left-[14%] -z-10 "></div>
           </div>
-        </article>
+        </motion.article>
         {/* words article */}
-        <article className="flex flex-col gap-2 justify-center md:w-1/2 md:p-4 font-bold md:text-3xl text-xl text-center md:text-left relative  ">
+        <motion.article
+          variants={slideIn("right", "tween", 0.2, 1)}
+          className="flex flex-col gap-2 justify-center md:w-1/2 md:p-4 font-bold md:text-3xl text-xl text-center md:text-left relative  "
+        >
           {/* start positioning of stars */}
           <div className="absolute bottom-10 right-1 md:-left-14 md:bottom-5">
             <Image src={star_b} alt="sr" className="md:w-5 w-3 animate-blink" />
@@ -193,9 +241,9 @@ export default function Intro() {
             title="Read More"
             style="w-max text-base mx-auto mt-5 md:mx-0"
           />
-        </article>
-      </section>
+        </motion.article>
+      </motion.section>
       <Line />
-    </main>
+    </motion.main>
   );
 }

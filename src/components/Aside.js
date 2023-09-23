@@ -33,7 +33,15 @@ export default function Aside() {
         <section className="flex gap-5 flex-col p-10 text-md w-[55%] text-sm pt-28">
           <div className="flex flex-col text-base  font-bold  gap-4  ">
             <Link href="#timeline">Timeline</Link>
-            <Link href="/">Overview</Link>
+            <Link
+              href="/"
+              className={`${
+                router.pathname === "/" &&
+                "bg-gradient-to-r  to-[#FF26B9] from-[#9034ff] bg-clip-text text-transparent rounded-sm w-max "
+              } `}
+            >
+              Overview
+            </Link>
             <Link href="#faq">FAQs</Link>
             <Link href="/contact">Contact</Link>
           </div>

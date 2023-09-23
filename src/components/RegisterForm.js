@@ -12,10 +12,12 @@ import star_d from "../../public/svg/dull-star.svg";
 import bg_light from "../../public/png/bg-light.png";
 import Link from "next/link";
 import { MdKeyboardArrowLeft } from "react-icons/md";
+import { toast } from "react-toastify";
 
 export default function RegisterForm() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
     email: "",
     phone_number: "",
@@ -40,6 +42,7 @@ export default function RegisterForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await fetch(
         "https://backend.getlinked.ai/hackathon/registration",
@@ -65,7 +68,10 @@ export default function RegisterForm() {
       } else {
         console.log("registration failed");
       }
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
+      toast.error("registration failed");
       console.log("error:", error);
     }
   };
@@ -160,7 +166,7 @@ export default function RegisterForm() {
               </label>
               <input
                 name="phone_number"
-                type="number"
+                type="tel"
                 value={data.phone_number}
                 onChange={handleChange}
                 required
@@ -251,7 +257,7 @@ export default function RegisterForm() {
             type="submit"
             className="submit   mx-auto bg-gradient-to-r  from-[#FF26B9] to-[#9034ff]  p-3 px-10 rounded-sm w-full"
           >
-            Register Now
+            {loading ? "loading..." : "Register Now"}
           </button>
         </form>
       </section>
